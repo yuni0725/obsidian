@@ -9,8 +9,6 @@ permalink: /
 
 {% assign notes = site.notes %}
 
-{% raw %}
-
 <div class="final-wrapper">
 
   <div class="grade-wrapper">
@@ -50,8 +48,6 @@ permalink: /
   </div>
 
 </div>
-
-{% endraw %}
 
 <style>
   .wrapper {
