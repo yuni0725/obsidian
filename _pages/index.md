@@ -5,13 +5,31 @@ id: home
 permalink: /
 ---
 
-# 생기부
-
 <strong>All Notes</strong>
 
+{% assign notes = site.notes %}
+
 <ul>
-  {% assign recent_notes = site.notes %}
-  {% for note in recent_notes %}
+  <strong>1학년</strong>
+  {% for note in notes.select { |item| item.include?("1학년") } %}
+    <li>
+      <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<ul>
+  <strong>2학년</strong>
+{% for note in notes.select { |item| item.include?("2학년") } %}
+    <li>
+      <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<ul>
+  <strong>3학년</strong>
+{% for note in notes.select { |item| item.include?("3학년") } %}
     <li>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
     </li>
