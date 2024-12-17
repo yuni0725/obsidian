@@ -11,7 +11,8 @@ permalink: /
 
 <ul>
   <strong>1학년</strong>
-  {% for note in notes.select { |item| item.include?("1학년") } %}
+  {% assign first_notes = notes | where: "grade", "1학년" %}
+  {% for note in first_notes %}
     <li>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
     </li>
@@ -20,7 +21,8 @@ permalink: /
 
 <ul>
   <strong>2학년</strong>
-{% for note in notes.select { |item| item.include?("2학년") } %}
+{% assign second_notes = notes | where: "grade", "2학년" %}
+  {% for note in second_notes %}
     <li>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
     </li>
@@ -29,7 +31,8 @@ permalink: /
 
 <ul>
   <strong>3학년</strong>
-{% for note in notes.select { |item| item.include?("3학년") } %}
+{% assign third_notes = notes | where: "grade", "3학년" %}
+  {% for note in third_notes %}
     <li>
       <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
     </li>
