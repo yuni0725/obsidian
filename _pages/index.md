@@ -9,7 +9,10 @@ permalink: /
 
 {% assign notes = site.notes %}
 
-<div class=final-wrapper>
+{% raw %}
+
+<div class="final-wrapper">
+
   <div class="grade-wrapper">
     <strong class="title-text">1학년</strong>
     <ul>
@@ -21,6 +24,7 @@ permalink: /
       {% endfor %}
     </ul>
   </div>
+
   <div class="grade-wrapper">
     <strong class="title-text">2학년</strong>
     <ul>
@@ -31,20 +35,23 @@ permalink: /
         </li>
       {% endfor %}
     </ul>
-
   </div>
+
   <div class="grade-wrapper">
     <strong class="title-text">3학년</strong>
     <ul>
       {% assign third_notes = notes | where: "grade", "3학년" %}
-       {% for note in third_notes %}
+      {% for note in third_notes %}
           <li>
             <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
           </li>
       {% endfor %}
     </ul>
   </div>
+
 </div>
+
+{% endraw %}
 
 <style>
   .wrapper {
@@ -61,6 +68,6 @@ permalink: /
 
   }
   .title-text {
-    font-size : 16px;
+    font-size : 18px;
   }
 </style>
